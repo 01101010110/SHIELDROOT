@@ -1,0 +1,1 @@
+fastboot boot tw.img

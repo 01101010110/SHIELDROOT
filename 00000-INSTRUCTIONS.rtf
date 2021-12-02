@@ -1,0 +1,151 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil\fcharset1 Segoe UI Symbol;}{\f2\fnil\fcharset134 SimSun;}}
+{\colortbl ;\red0\green0\blue255;}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang9 *Hi Friends!*\par
+Today I want to show you how to root your Nvidia Shield, for development purposes, as well as for repairing a bricked system. \par
+I spent over 80 hours researching how exactly this works, and bricked my system over 30 times to try to figure out every way one could "brick" their system in the process of flash.. and succeeded.. so now you don't have to fail 29 times like I did. :-)\par
+I have created a toolkit that contains all the drivers, files, and some executable adb code I wrote from guides I read. I will credit all my sources as always in a seperate file, saved in the SHIELDROOT folder, as it is very, very many this time. It will also be posted on forums that allow such a massive data dump.\par
+Note that if you prefer, I have attached a standalone ADB executable (powershell) that you can use to manually add the commands. Just right click the batch files, select edit, and you can copy and paste the commands one at time, for troubleshooting purposes.\par
+\par
+*DOWNLOAD SHIELDROOT:* \par
+\par
+*FULL VIDEO GUIDE*\par
+{{\field{\*\fldinst{HYPERLINK https://youtu.be/JvtF0lgMOqA }}{\fldrslt{https://youtu.be/JvtF0lgMOqA\ul0\cf0}}}}\f0\fs22\par
+\par
+*WRITTEN INSTRUCTIONS*\par
+\par
+*Step one:*\par
+Plug your usb hub into the port next to your hdmi.\par
+Plug a usb-c cable into the other port.\par
+You will need an Nvidia Controller, a USB Hub, Portable Drive.\par
+As well as a mouse and controller.\par
+\par
+*How to Boot into the bootloader:*\par
+Unplug the power cord from the Shield, then reapply it.\par
+Using your Nvidia Controller, hold A and B until the Bootloader shows.\par
+Select Unlock the bootloader.\par
+Select Factory Data Reset.\par
+Hit Reboot and remove the power cord, then unplug the usb from PC.\par
+Wait a few seconds then add the power cord to the Shield.\par
+Leave  the USBC unplugged from your PC.\par
+Hold A and B to post back into the bootloader.\par
+\par
+*Setting up the Shield Drivers:*\par
+Open Device Manager on your PC.\par
+Plug the USBC cable into your PC.\par
+Right click on the new device and hit update driver.\par
+Browse Manually to Shield Drivers.\par
+Then hit, "let me pick from a list".\par
+Select I have a Disk.\par
+Then install the andriod.usb file.\par
+\par
+*Rooting the Shield, While Flashing a Custom, Fully Rooted System:*\par
+In SHIELDROOT, Run OEMUnlock.\par
+Unplug the USB-C From the PC and Reapply. (Must do to fix broke fastboot after unlock)\par
+Run ShieldRoot.\par
+This will flash the NVIDIA Developer Rooted images we need to install custom OS and Root.\par
+This will also flash TWRP for us, to recovery as well as boot. \par
+This purposely bricks the system to run TWRP on boot until we achieve desired results.\par
+\par
+*Flashing the OS and optional GAPPS:*\par
+Have Lineage and Gapps saved to a portable drive.\par
+Plug the drive into your usb hub.\par
+Select Install in TWRP and start with Lineage. \par
+Do the same thing for GAPPS If you want to have your playstore. RECOMMENDED. \par
+Unless you know what you're doing... and you want Google to not spy on your shield.\par
+The GAPPS Version is the mini TV build so it runs much smoother. \par
+\par
+*Sideloading the Root:*\par
+Go into Advanced on TWRP.\par
+Select Sideload ADB.\par
+Then run the SideloadRootApp.bat file.\par
+Lastly SideloadRootManger.bat file.\par
+Select Reboot system.\par
+Setup your system how you please.\par
+\par
+*Unlock Developer Options:*\par
+Go into settings.\par
+Device preferences.\par
+About.\par
+Build, hit build 7 times.\par
+ \par
+*Setting up the ADB Tools for Developers or Pentesters:*\par
+Go into developer options.\par
+Enable USB Debugging, all 4 options including Network debugging.\par
+Take note of your IP address.\par
+Right click AdbConnect.bat and select edit.\par
+Add your IP address there.\par
+\par
+Run AdbConnect and select *Allow* on the Shield.\par
+Run AdbConnect again and you will be successfully connected.\par
+You can then get Root Access in ADB by running AdbR00t.bat if you need it.\par
+Otherwise you have full access to push files, read and write over system partitions, etc.\par
+\par
+Also included files to reboot the system with one push, AdbReboot.bat\par
+Reboot into the bootloader is included, Bootloader.bat\par
+Take note you are able to drop apps into the SHIELDROOT folder and edit the push apps script.\par
+I will be working on a rom with some of my favorite pen-testing tools, as well as a clean version.\par
+I hope to release it publicly next month.\par
+\par
+Thank you to the community for always sharing their knowledge.\par
+Love, Jen\par
+\par
+Youtube Vids:\par
+FULL PLAYLIST: {{\field{\*\fldinst{HYPERLINK https://www.youtube.com/playlist?list=PLErzGEIjyUlyiOLVl4aWDYRW-CJd6yF-N }}{\fldrslt{https://www.youtube.com/playlist?list=PLErzGEIjyUlyiOLVl4aWDYRW-CJd6yF-N\ul0\cf0}}}}\f0\fs22\par
+How To Root Andy MANUAL Windows Setup Andyroid 0.45.5.0 LATEST\par
+{{\field{\*\fldinst{HYPERLINK https://www.youtube.com/watch?v=goyRc-Znt7o&list=PLErzGEIjyUlyiOLVl4aWDYRW-CJd6yF-N&index=1 }}{\fldrslt{https://www.youtube.com/watch?v=goyRc-Znt7o&list=PLErzGEIjyUlyiOLVl4aWDYRW-CJd6yF-N&index=1\ul0\cf0}}}}\f0\fs22\par
+\f1\u-10179?\u-8923?\f0 Safely Backup and Restore FULL ROM using TWRP Recovery (4K)\par
+{{\field{\*\fldinst{HYPERLINK https://www.youtube.com/watch?v=jNXHbnvoCuI&list=PLErzGEIjyUlyiOLVl4aWDYRW-CJd6yF-N&index=2 }}{\fldrslt{https://www.youtube.com/watch?v=jNXHbnvoCuI&list=PLErzGEIjyUlyiOLVl4aWDYRW-CJd6yF-N&index=2\ul0\cf0}}}}\f0\fs22\par
+How to fix "Zip Treble compatibility error!" Invalid zip file format! in TWRP custom recovery\par
+{{\field{\*\fldinst{HYPERLINK https://www.youtube.com/watch?v=32ZTMkIQYyk&list=PLErzGEIjyUlyiOLVl4aWDYRW-CJd6yF-N&index=3&t=7s }}{\fldrslt{https://www.youtube.com/watch?v=32ZTMkIQYyk&list=PLErzGEIjyUlyiOLVl4aWDYRW-CJd6yF-N&index=3&t=7s\ul0\cf0}}}}\f0\fs22\par
+Linux File System/Structure Explained!\par
+{{\field{\*\fldinst{HYPERLINK https://www.youtube.com/watch?v=HbgzrKJvDRw&list=PLErzGEIjyUlyiOLVl4aWDYRW-CJd6yF-N&index=4 }}{\fldrslt{https://www.youtube.com/watch?v=HbgzrKJvDRw&list=PLErzGEIjyUlyiOLVl4aWDYRW-CJd6yF-N&index=4\ul0\cf0}}}}\f0\fs22\par
+Linux System Administration Full Course\par
+{{\field{\*\fldinst{HYPERLINK https://www.youtube.com/watch?v=wsh64rjnRas&list=PLErzGEIjyUlyiOLVl4aWDYRW-CJd6yF-N&index=5 }}{\fldrslt{https://www.youtube.com/watch?v=wsh64rjnRas&list=PLErzGEIjyUlyiOLVl4aWDYRW-CJd6yF-N&index=5\ul0\cf0}}}}\f0\fs22\par
+Easily Run Linux On Android With AndroNix - Linux Distro on Android without root\par
+{{\field{\*\fldinst{HYPERLINK https://www.youtube.com/watch?v=jvuufPWKF3k&list=PLErzGEIjyUlyiOLVl4aWDYRW-CJd6yF-N&index=6 }}{\fldrslt{https://www.youtube.com/watch?v=jvuufPWKF3k&list=PLErzGEIjyUlyiOLVl4aWDYRW-CJd6yF-N&index=6\ul0\cf0}}}}\f0\fs22\par
+New Way to turn you PC into an Android TV Box with FydeOS - Bye Bye Android X86\par
+{{\field{\*\fldinst{HYPERLINK https://www.youtube.com/watch?v=ss0Ies4nIfQ&list=PLErzGEIjyUlyiOLVl4aWDYRW-CJd6yF-N&index=7 }}{\fldrslt{https://www.youtube.com/watch?v=ss0Ies4nIfQ&list=PLErzGEIjyUlyiOLVl4aWDYRW-CJd6yF-N&index=7\ul0\cf0}}}}\f0\fs22\par
+Nvidia Shield TV Pro 2015 SSD Swap out + Regrease The APU!\par
+{{\field{\*\fldinst{HYPERLINK https://www.youtube.com/watch?v=JOdvb3cCZSY&list=PLErzGEIjyUlyiOLVl4aWDYRW-CJd6yF-N&index=8 }}{\fldrslt{https://www.youtube.com/watch?v=JOdvb3cCZSY&list=PLErzGEIjyUlyiOLVl4aWDYRW-CJd6yF-N&index=8\ul0\cf0}}}}\f0\fs22\par
+Android multi-boot demo\par
+{{\field{\*\fldinst{HYPERLINK https://www.youtube.com/watch?v=TX_Yr3qK3Qo&list=PLErzGEIjyUlyiOLVl4aWDYRW-CJd6yF-N&index=9 }}{\fldrslt{https://www.youtube.com/watch?v=TX_Yr3qK3Qo&list=PLErzGEIjyUlyiOLVl4aWDYRW-CJd6yF-N&index=9\ul0\cf0}}}}\f0\fs22\par
+Magisk 22.1 - How to Install Magisk your Device ? | Root any Android Device 2021 \f1\u-10179?\u-8923?\u-10179?\u-8923?\f0\par
+{{\field{\*\fldinst{HYPERLINK https://www.youtube.com/watch?v=__5EmISEj2g&list=PLErzGEIjyUlyiOLVl4aWDYRW-CJd6yF-N&index=10 }}{\fldrslt{https://www.youtube.com/watch?v=__5EmISEj2g&list=PLErzGEIjyUlyiOLVl4aWDYRW-CJd6yF-N&index=10\ul0\cf0}}}}\f0\fs22\par
+How to Download & Install GApps and Magisk on LineageOS 18.1 with LOS Recovery\par
+{{\field{\*\fldinst{HYPERLINK https://www.youtube.com/watch?v=yrCCMeGSTto&list=PLErzGEIjyUlyiOLVl4aWDYRW-CJd6yF-N&index=11 }}{\fldrslt{https://www.youtube.com/watch?v=yrCCMeGSTto&list=PLErzGEIjyUlyiOLVl4aWDYRW-CJd6yF-N&index=11\ul0\cf0}}}}\f0\fs22\par
+Nvidia shield TV users MUST watch - 10 Hidden features you did not know existed\par
+{{\field{\*\fldinst{HYPERLINK https://www.youtube.com/watch?v=qrMVbjwS3o8&list=PLErzGEIjyUlyiOLVl4aWDYRW-CJd6yF-N&index=12 }}{\fldrslt{https://www.youtube.com/watch?v=qrMVbjwS3o8&list=PLErzGEIjyUlyiOLVl4aWDYRW-CJd6yF-N&index=12\ul0\cf0}}}}\f0\fs22\par
+LineageOS Custom Rom on Shield Android TV (2015)\par
+{{\field{\*\fldinst{HYPERLINK https://www.youtube.com/watch?v=S1_wiSIQ-Is&list=PLErzGEIjyUlyiOLVl4aWDYRW-CJd6yF-N&index=13 }}{\fldrslt{https://www.youtube.com/watch?v=S1_wiSIQ-Is&list=PLErzGEIjyUlyiOLVl4aWDYRW-CJd6yF-N&index=13\ul0\cf0}}}}\f0\fs22\par
+Nvidia Shield TV Pro (2021)\f2\'a3\'fc\f0 Watch Before You Buy\par
+{{\field{\*\fldinst{HYPERLINK https://www.youtube.com/watch?v=yh0MofkC-0o&list=PLErzGEIjyUlyiOLVl4aWDYRW-CJd6yF-N&index=14 }}{\fldrslt{https://www.youtube.com/watch?v=yh0MofkC-0o&list=PLErzGEIjyUlyiOLVl4aWDYRW-CJd6yF-N&index=14\ul0\cf0}}}}\f0\fs22\par
+Recovery OS Nvidia Shield TV installation\par
+{{\field{\*\fldinst{HYPERLINK https://www.youtube.com/watch?v=9yHvOotwRjw&list=PLErzGEIjyUlyiOLVl4aWDYRW-CJd6yF-N&index=15 }}{\fldrslt{https://www.youtube.com/watch?v=9yHvOotwRjw&list=PLErzGEIjyUlyiOLVl4aWDYRW-CJd6yF-N&index=15\ul0\cf0}}}}\f0\fs22\par
+[HOW-TO] Install Full Android Nougat on Nvidia Shield TV 2015 - TWRP - ROOT [Bye Bye Android TV]\par
+{{\field{\*\fldinst{HYPERLINK https://www.youtube.com/watch?v=LQaYb4oVHVc&list=PLErzGEIjyUlyiOLVl4aWDYRW-CJd6yF-N&index=16 }}{\fldrslt{https://www.youtube.com/watch?v=LQaYb4oVHVc&list=PLErzGEIjyUlyiOLVl4aWDYRW-CJd6yF-N&index=16\ul0\cf0}}}}\f0\fs22\par
+Nvidia Shield Pro unlocked bootload, twrp and more\par
+{{\field{\*\fldinst{HYPERLINK https://www.youtube.com/watch?v=Nb6ZChjK0Jo&list=PLErzGEIjyUlyiOLVl4aWDYRW-CJd6yF-N&index=17 }}{\fldrslt{https://www.youtube.com/watch?v=Nb6ZChjK0Jo&list=PLErzGEIjyUlyiOLVl4aWDYRW-CJd6yF-N&index=17\ul0\cf0}}}}\f0\fs22\par
+Nvidia Shield TV Pro 2019 Boot Loop Repair (Recovery Image)\par
+{{\field{\*\fldinst{HYPERLINK https://www.youtube.com/watch?v=qc4m2Hfd4HY&list=PLErzGEIjyUlyiOLVl4aWDYRW-CJd6yF-N&index=18 }}{\fldrslt{https://www.youtube.com/watch?v=qc4m2Hfd4HY&list=PLErzGEIjyUlyiOLVl4aWDYRW-CJd6yF-N&index=18\ul0\cf0}}}}\f0\fs22\par
+HOW TO ROOT NVIDIA SHIELD 16GB ON OREO UPDATE\par
+{{\field{\*\fldinst{HYPERLINK https://www.youtube.com/watch?v=x893ajy9YVo&list=PLErzGEIjyUlyiOLVl4aWDYRW-CJd6yF-N&index=19 }}{\fldrslt{https://www.youtube.com/watch?v=x893ajy9YVo&list=PLErzGEIjyUlyiOLVl4aWDYRW-CJd6yF-N&index=19\ul0\cf0}}}}\f0\fs22\par
+Website Links:\par
+{{\field{\*\fldinst{HYPERLINK https://troypoint.com/wolf-launcher/ }}{\fldrslt{https://troypoint.com/wolf-launcher/\ul0\cf0}}}}\f0\fs22\par
+{{\field{\*\fldinst{HYPERLINK https://developer.android.com/studio?gclid=Cj0KCQiA15yNBhDTARIsAGnwe0XsRSr2ALCeB14649LOMO6mMhLRshfI7GbCkzOaevGEiDUsLunD6UgaAhJGEALw_wcB&gclsrc=aw.ds#downloads }}{\fldrslt{https://developer.android.com/studio?gclid=Cj0KCQiA15yNBhDTARIsAGnwe0XsRSr2ALCeB14649LOMO6mMhLRshfI7GbCkzOaevGEiDUsLunD6UgaAhJGEALw_wcB&gclsrc=aw.ds#downloads\ul0\cf0}}}}\f0\fs22\par
+{{\field{\*\fldinst{HYPERLINK https://twrp.me/ }}{\fldrslt{https://twrp.me/\ul0\cf0}}}}\f0\fs22\par
+{{\field{\*\fldinst{HYPERLINK https://play.google.com/store/apps/details?id=com.speedsoftware.explorer&hl=en_US&gl=US }}{\fldrslt{https://play.google.com/store/apps/details?id=com.speedsoftware.explorer&hl=en_US&gl=US\ul0\cf0}}}}\f0\fs22\par
+{{\field{\*\fldinst{HYPERLINK https://developer.nvidia.com/shield-developer-os-images }}{\fldrslt{https://developer.nvidia.com/shield-developer-os-images\ul0\cf0}}}}\f0\fs22\par
+{{\field{\*\fldinst{HYPERLINK https://magiskmanager.com/ }}{\fldrslt{https://magiskmanager.com/\ul0\cf0}}}}\f0\fs22\par
+{{\field{\*\fldinst{HYPERLINK https://download.lineageos.org/ }}{\fldrslt{https://download.lineageos.org/\ul0\cf0}}}}\f0\fs22\par
+{{\field{\*\fldinst{HYPERLINK https://opengapps.org/ }}{\fldrslt{https://opengapps.org/\ul0\cf0}}}}\f0\fs22\par
+{{\field{\*\fldinst{HYPERLINK https://www.reddit.com/r/xdacirclejerk/comments/qvenr5/how_to_use_a_mouse_and_keyboard_on_stadia_google/ }}{\fldrslt{https://www.reddit.com/r/xdacirclejerk/comments/qvenr5/how_to_use_a_mouse_and_keyboard_on_stadia_google/\ul0\cf0}}}}\f0\fs22\par
+{{\field{\*\fldinst{HYPERLINK https://stackoverflow.com/questions/33462720/adb-unable-to-connect-to-192-168-1-105555 }}{\fldrslt{https://stackoverflow.com/questions/33462720/adb-unable-to-connect-to-192-168-1-105555\ul0\cf0}}}}\f0\fs22\par
+{{\field{\*\fldinst{HYPERLINK https://www.reddit.com/r/AndroidTV/comments/jnxlmw/guidenatively_use_custom_launcher_on_chromecast/ }}{\fldrslt{https://www.reddit.com/r/AndroidTV/comments/jnxlmw/guidenatively_use_custom_launcher_on_chromecast/\ul0\cf0}}}}\f0\fs22\par
+{{\field{\*\fldinst{HYPERLINK https://forum.xda-developers.com/t/how-to-pictures-adb-working-on-the-google-chromecast.2407250/ }}{\fldrslt{https://forum.xda-developers.com/t/how-to-pictures-adb-working-on-the-google-chromecast.2407250/\ul0\cf0}}}}\f0\fs22\par
+{{\field{\*\fldinst{HYPERLINK https://forum.xda-developers.com/t/how-to-root-and-install-magisk-on-nstv-2019-pro-v8-2-0.4189567/ }}{\fldrslt{https://forum.xda-developers.com/t/how-to-root-and-install-magisk-on-nstv-2019-pro-v8-2-0.4189567/\ul0\cf0}}}}\f0\fs22\par
+{{\field{\*\fldinst{HYPERLINK https://forum.xda-developers.com/t/how-to-skip-bypass-google-sign-in-nstv-pro-2019-with-any-firmware-versions.4189549/#post-83912015 }}{\fldrslt{https://forum.xda-developers.com/t/how-to-skip-bypass-google-sign-in-nstv-pro-2019-with-any-firmware-versions.4189549/#post-83912015\ul0\cf0}}}}\f0\fs22\par
+{{\field{\*\fldinst{HYPERLINK https://forum.xda-developers.com/t/guide-8-2-3-magisk-root-magiskhide-twrp.4328569/ }}{\fldrslt{https://forum.xda-developers.com/t/guide-8-2-3-magisk-root-magiskhide-twrp.4328569/\ul0\cf0}}}}\f0\fs22\par
+\par
+}
+ 

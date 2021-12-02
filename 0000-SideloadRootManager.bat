@@ -1,0 +1,1 @@
+adb sideload rootmanager.apk
